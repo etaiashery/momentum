@@ -11,13 +11,43 @@
 
 .App {
   flex: 1;
-  padding: 2rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
   position: relative;
 }
 
+.app-header {
+  background-color: white;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 996;
+}
+
+.app-header h1 {
+  margin: 0;
+  color: #213547;
+}
+
+.logo-container {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 997;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 3rem;
+  width: auto;
+  cursor: pointer;
+}
+
 .drawer-toggle {
-  position: fixed;
+  position: absolute;
   top: 1rem;
   right: 1rem;
   z-index: 997;
@@ -30,11 +60,61 @@
   border-radius: 8px;
   transition: all 0.2s;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .drawer-toggle:hover {
   background-color: #2a2a2a;
   border-color: #646cff;
+}
+
+.app-main {
+  flex: 1;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  padding:  frem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(2px 2px at 60px 70px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 50px 50px, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1px 1px at 20px 90px, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(2px 2px at 90px 40px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(2px 2px at 160px 30px, rgba(255, 255, 255, 0.9), transparent);
+  background-size: 200px 200px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px, 20px 200px, 150px 150px, 180px 50px;
+}
+
+.app-main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(1px 1px at 250px 150px, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(2px 2px at 300px 200px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 350px 100px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(2px 2px at 400px 250px, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1px 1px at 450px 180px, rgba(255, 255, 255, 0.7), transparent);
+  background-size: 500px 500px;
+  pointer-events: none;
+}
+
+.app-main > * {
+  position: relative;
+  z-index: 1;
+}
+
+.app-main .card,
+.app-main .description {
+  color: rgba(255, 255, 255, 0.95);
 }
 
 @media (prefers-color-scheme: light) {
