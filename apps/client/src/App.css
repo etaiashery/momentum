@@ -1,12 +1,53 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
 }
 
 .App {
+  flex: 1;
   padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.drawer-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 997;
+  background-color: #1a1a1a;
+  color: rgba(255, 255, 255, 0.87);
+  border: 1px solid #333;
+  padding: 0.75rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.drawer-toggle:hover {
+  background-color: #2a2a2a;
+  border-color: #646cff;
+}
+
+@media (prefers-color-scheme: light) {
+  .drawer-toggle {
+    background-color: #f9f9f9;
+    color: #213547;
+    border-color: #e0e0e0;
+  }
+
+  .drawer-toggle:hover {
+    background-color: #f0f0f0;
+    border-color: #646cff;
+  }
 }
 
 .card {
