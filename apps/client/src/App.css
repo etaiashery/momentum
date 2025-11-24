@@ -74,7 +74,8 @@
 .app-main {
   flex: 1;
   background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-  padding:  frem;
+  /* background-color: #0b3c59; */
+  padding: 2rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -115,6 +116,92 @@
 .app-main .card,
 .app-main .description {
   color: rgba(255, 255, 255, 0.95);
+}
+
+.categories-card {
+  /* background-color: black; */
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 24px;
+  /* background-color: rgba(255, 255, 255, 0.08); */
+  backdrop-filter: blur(6px);
+  /* border: 1px solid rgba(255, 255, 255, 0.15); */
+  text-align: center;
+  color: rgba(255, 255, 255, 0.95);
+  position: relative;
+}
+
+.categories-card h4 {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.categories-list {
+  display: flex;
+  padding-top:1rem;
+  padding-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  width: calc(100% + 16rem);
+  margin-left: -8rem;
+  margin-right: -8rem;
+  justify-content: center;
+  background-color: #0b3c59;
+}
+
+.categories-card::before,
+.categories-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 6rem;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.category-title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.9rem;
+  min-width: 64px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #cce1ff);
+  color: #123055;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-title:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.success-button {
+  margin-top: 1.5rem;
+  padding: 0.85rem 2rem;
+  border-radius: 999px;
+  border: none;
+  background-color: #4ade80;
+  color: #0b3c59;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 30px rgba(74, 222, 128, 0.4);
+}
+
+.success-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(74, 222, 128, 0.5);
 }
 
 @media (prefers-color-scheme: light) {

@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react'
-import Sidebar from './Sidebar'
-import logo from './momentum logo.svg/momentum logo.svg'
+import Drawer from './Drawer'
+import useDrawer from './hooks/useDrawer'
+import { CategoriesCard } from './CategoriesCard'
+import { hobbies } from './consts/hobbies'
+import logo from './assets/momentum logo.svg'
 import './App.css'
 
 function App() {
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(true)
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+  const { isOpen, toggleDrawer, closeDrawer } = useDrawer()
 
   useEffect(() => {
     fetch('/api/hello')
@@ -20,10 +23,6 @@ function App() {
         setLoading(false)
       })
   }, [])
-
-  const toggleDrawer = () => {
-    setIsDrawerOpen(!isDrawerOpen)
-  }
 
   return (
     <div className="app-container">
@@ -40,6 +39,7 @@ function App() {
           <h1>let's create your MOMENTUM</h1>
           <p>The ultimate Mentor in your phone at your service everywhere any time.</p>
           <button className="success-button">Get Started</button>
+          <CategoriesCard hobbieTitles={hobbies} />
           <div className="card">
             {loading ? (
               <p>Loading...</p>
@@ -52,7 +52,7 @@ function App() {
           </p>
         </main>
       </div>
-      <Sidebar isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
+      <Drawer isOpen={isOpen} onClose={closeDrawer} />
     </div>
   )
 }
